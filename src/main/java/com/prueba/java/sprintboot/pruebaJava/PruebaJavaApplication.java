@@ -49,8 +49,6 @@ public class PruebaJavaApplication implements CommandLineRunner {
 		this.userPojo = userPojo;
 		this.userRepository = userRepository;
 		this.userService = userService;
-
-
 	}
 
 	public static void main(String[] args) {

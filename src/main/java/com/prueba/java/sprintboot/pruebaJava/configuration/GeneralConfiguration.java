@@ -12,11 +12,11 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
-@Configuration
-@PropertySource("classpath:conection.properties")
-@EnableConfigurationProperties(UserPojo.class)
+/*@Configuration
+@PropertySource("classpath:application.properties")
+@EnableConfigurationProperties(UserPojo.class)*/
 public class GeneralConfiguration {
-    @Value("${value.name}")
+    /*@Value("${value.name}")
     private String nombre;
 
     @Value("${value.apellido}")
@@ -40,9 +40,9 @@ public class GeneralConfiguration {
     @Bean
     public MyBeanWithProperties function(){
         return new MyBeanWithPropertiesImplement(nombre, apellido);
-    }
+    }*/
 
-    @Bean
+    /*@Bean
     public DataSource dataSource(){
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(driver);
@@ -50,5 +50,5 @@ public class GeneralConfiguration {
         dataSourceBuilder.username(username);
         dataSourceBuilder.password(password);
         return dataSourceBuilder.build();
-    }
+    }*/
 }
