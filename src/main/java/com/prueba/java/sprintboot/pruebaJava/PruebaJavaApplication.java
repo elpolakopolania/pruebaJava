@@ -1,21 +1,15 @@
 package com.prueba.java.sprintboot.pruebaJava;
 
-import com.prueba.java.sprintboot.pruebaJava.bean.MyBean;
-import com.prueba.java.sprintboot.pruebaJava.bean.MyBeanWithDependency;
-import com.prueba.java.sprintboot.pruebaJava.bean.MyBeanWithProperties;
 import com.prueba.java.sprintboot.pruebaJava.component.ComponentDependency;
 import com.prueba.java.sprintboot.pruebaJava.entity.User;
-import com.prueba.java.sprintboot.pruebaJava.pojo.UserPojo;
 import com.prueba.java.sprintboot.pruebaJava.repository.UserRepository;
 import com.prueba.java.sprintboot.pruebaJava.service.UserService;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 import java.util.Arrays;

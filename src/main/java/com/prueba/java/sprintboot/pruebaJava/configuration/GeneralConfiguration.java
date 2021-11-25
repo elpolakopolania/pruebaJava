@@ -1,17 +1,5 @@
 package com.prueba.java.sprintboot.pruebaJava.configuration;
 
-import com.prueba.java.sprintboot.pruebaJava.bean.MyBeanWithProperties;
-import com.prueba.java.sprintboot.pruebaJava.bean.MyBeanWithPropertiesImplement;
-import com.prueba.java.sprintboot.pruebaJava.pojo.UserPojo;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-
-import javax.sql.DataSource;
-
 /*@Configuration
 @PropertySource("classpath:application.properties")
 @EnableConfigurationProperties(UserPojo.class)*/
