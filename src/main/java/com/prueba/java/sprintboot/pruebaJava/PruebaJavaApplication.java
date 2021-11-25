@@ -27,26 +27,26 @@ public class PruebaJavaApplication implements CommandLineRunner {
 	private final Log LOGGER = LogFactory.getLog(PruebaJavaApplication.class);
 
 	private ComponentDependency componentDependency;
-	private MyBean myBean;
+	/*private MyBean myBean;
 	private MyBeanWithDependency myBeanWithDependency;
 	private MyBeanWithProperties myBeanWithProperties;
-	private UserPojo userPojo;
+	private UserPojo userPojo;*/
 	private UserRepository userRepository;
 	private UserService userService;
 
 	public PruebaJavaApplication(
 			@Qualifier("componentTwoImplement") ComponentDependency componentDependency,
-			MyBean myBean, MyBeanWithDependency myBeanWithDependency,
+			/*MyBean myBean, MyBeanWithDependency myBeanWithDependency,
 			MyBeanWithProperties myBeanWithProperties,
-			UserPojo userPojo,
+			UserPojo userPojo,*/
 			UserRepository userRepository,
 			UserService userService
 	){
 		this.componentDependency = componentDependency;
-		this.myBean = myBean;
+		/*this.myBean = myBean;
 		this.myBeanWithDependency = myBeanWithDependency;
 		this.myBeanWithProperties = myBeanWithProperties;
-		this.userPojo = userPojo;
+		this.userPojo = userPojo;*/
 		this.userRepository = userRepository;
 		this.userService = userService;
 	}
@@ -58,9 +58,9 @@ public class PruebaJavaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		//this.classesAnteriores();
-		this.saveUserInDataBase();
-		this.getInformationJpqlFromUser();
-		this.saveWithErrorTransactional();
+		//this.saveUserInDataBase();
+		//this.getInformationJpqlFromUser();
+		//this.saveWithErrorTransactional();
 	}
 
 	private void saveWithErrorTransactional(){
@@ -125,13 +125,13 @@ public class PruebaJavaApplication implements CommandLineRunner {
 
 		userRepository.findByNameContainingOrderByIdDesc("user")
 				.stream()
-				.forEach(user -> LOGGER.info("Usuario encontrado con like y ordenado -> " + user));*/
+				.forEach(user -> LOGGER.info("Usuario encontrado con like y ordenado -> " + user));
 
 
 		LOGGER.info("El usuario a partir del name parameter es: => " +
 		userRepository.getAllByBirthDateAndEmail(LocalDate.of(2021,04,20), "Daniela@email.com")
 				.orElseThrow(() -> new RuntimeException("No se encontro el usuario del name parameter"))
-		);
+		);*/
 
 
 
@@ -158,13 +158,13 @@ public class PruebaJavaApplication implements CommandLineRunner {
 	}
 
 	private void classesAnteriores(){
-		componentDependency.saludar();
+		/*componentDependency.saludar();
 		myBean.print();
 		myBeanWithDependency.printWithDependency();
 		System.out.println(myBeanWithProperties.function());
 		System.out.println(userPojo.getEmail() + "-" + userPojo.getPassword() + "-" + userPojo.getAge());
 		LOGGER.error("Esto es un error del aplicativo. prueba");
-		/*try{
+		try{
 			int value = 10/0;
 			LOGGER.info("Mi valor:" + value);
 		}catch(Exception e) {
