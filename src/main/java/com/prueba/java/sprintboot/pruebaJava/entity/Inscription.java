@@ -1,5 +1,6 @@
 package com.prueba.java.sprintboot.pruebaJava.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,15 +22,13 @@ public class Inscription {
     @Column(length = 2)
     private Integer age;
 
-    @OneToOne(mappedBy= "inscription",cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name ="house")
+    @JsonBackReference
     private House house;
 
-    /*@OneToOne
-    @JoinColumn(name="house")
-    private House house;*/
-
     public Inscription() {
+
     }
 
     public Inscription(Long id){

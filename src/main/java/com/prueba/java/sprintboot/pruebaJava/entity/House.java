@@ -1,6 +1,10 @@
 package com.prueba.java.sprintboot.pruebaJava.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="house")
@@ -12,19 +16,22 @@ public class House {
     @Column(length = 20)
     private String name;
 
-    /*@OneToOne(mappedBy="house")
-    private Inscription inscription;*/
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Inscription> inscriptions = new ArrayList<>();
 
-    @JoinColumn(name = "id_inscription")
-    @OneToOne(fetch = FetchType.LAZY)
-    private Inscription inscription;
 
     public House() {
+
     }
 
     public House(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public House(Long id){
+        this.id = id;
     }
 
     public Long getId() {
@@ -41,6 +48,14 @@ public class House {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Inscription> getInscriptions() {
+        return inscriptions;
+    }
+
+    public void setInscriptions(List<Inscription> inscriptions) {
+        this.inscriptions = inscriptions;
     }
 
     @Override

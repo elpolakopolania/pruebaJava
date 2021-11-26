@@ -41,6 +41,7 @@ public class UserRestController {
     @GetMapping("/")
     List<User> get(){
         return getUser.getAll();
+
     }
 
     @PostMapping("/")

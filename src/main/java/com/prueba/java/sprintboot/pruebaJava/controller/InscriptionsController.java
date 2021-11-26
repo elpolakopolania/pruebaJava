@@ -12,31 +12,33 @@ import java.util.List;
 @RequestMapping("/api/inscriptions")
 public class InscriptionsController {
     private GetInscription getInscription;
+    private InscriptionRepository inscriptionRepository;
     /*private CreateUser createUser;
     private DeleteUser deleteUser;
     private UpdateUser updateUser;
-    private InscriptionRepository inscriptionRepository;*/
+    */
 
 
     public InscriptionsController(
-            /*GetInscription getInscription,
+            GetInscription getInscription,
+            InscriptionRepository inscriptionRepository/*,
             CreateUser createUser,
             DeleteUser deleteUser,
             UpdateUser updateUser,
-            InscriptionRepository inscriptionRepository*/
+            */
     ) {
-        /*this.getInscription = getInscription;
-        this.createUser = createUser;
+        this.getInscription = getInscription;
+        this.inscriptionRepository = inscriptionRepository;
+        /*this.createUser = createUser;
         this.deleteUser = deleteUser;
         this.updateUser = updateUser;
-        this.inscriptionRepository = inscriptionRepository;*/
+        */
     }
 
-    /*@GetMapping("/")
+    @GetMapping("/")
     List<Inscription> get(){
         return getInscription.getAll();
-        //return inscriptionRepository.findAll();
-    }*/
+    }
 
     /*@PostMapping("/")
     ResponseEntity<User> newUser(@RequestBody User newUser){
