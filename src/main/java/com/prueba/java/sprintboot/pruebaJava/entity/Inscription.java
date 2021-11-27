@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="inscription")
 public class Inscription {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_inscription", nullable = false, unique = true)
     private Long id;
 
@@ -22,21 +22,19 @@ public class Inscription {
     @Column(length = 2)
     private Integer age;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name ="house")
-    @JsonBackReference
+    @ManyToOne
+    /*@JoinColumn(name ="id_house")
+    @JsonBackReference*/
     private House house;
 
     public Inscription() {
-
     }
 
     public Inscription(Long id){
         this.id = id;
     }
 
-    public Inscription(Long id, String name, String lastname, Long identification, Integer age, House house) {
-        this.id = id;
+    public Inscription(String name, String lastname, Long identification, Integer age, House house) {
         this.name = name;
         this.lastname = lastname;
         this.identification = identification;

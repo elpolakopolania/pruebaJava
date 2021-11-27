@@ -18,7 +18,6 @@ public class Post {
     private User user;
 
     public Post() {
-
     }
 
     public Post(String description, User user) {

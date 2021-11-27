@@ -10,28 +10,27 @@ import java.util.List;
 @Table(name="house")
 public class House {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_house", nullable = false, unique = true)
     private Long id;
-    @Column(length = 20)
+    @Column(length = 20, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    /*@OneToMany
     @JsonManagedReference
-    private List<Inscription> inscriptions = new ArrayList<>();
+    private List<Inscription> inscriptions = new ArrayList<Inscription>();*/
 
 
     public House() {
 
     }
 
-    public House(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public House(Long id){
         this.id = id;
+    }
+
+    public House(String name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -50,13 +49,13 @@ public class House {
         this.name = name;
     }
 
-    public List<Inscription> getInscriptions() {
+    /*public List<Inscription> getInscriptions() {
         return inscriptions;
     }
 
     public void setInscriptions(List<Inscription> inscriptions) {
         this.inscriptions = inscriptions;
-    }
+    }*/
 
     @Override
     public String toString() {

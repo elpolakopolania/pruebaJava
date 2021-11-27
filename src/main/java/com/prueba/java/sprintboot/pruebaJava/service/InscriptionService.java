@@ -22,7 +22,7 @@ public class InscriptionService {
     @Transactional
     public void saveTransactional(List<Inscription> inscriptions){
         inscriptions.stream()
-                .peek(inscription -> LOG.info("Usuario insertado desde transactional => " + inscription ))
+                .peek(inscription -> LOG.info("Casa creada => " + inscription ))
                 .forEach(inscriptionRepository::save);
     }
 
