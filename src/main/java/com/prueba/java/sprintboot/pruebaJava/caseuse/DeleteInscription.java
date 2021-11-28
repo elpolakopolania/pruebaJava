@@ -1,7 +1,6 @@
 package com.prueba.java.sprintboot.pruebaJava.caseuse;
 
 import com.prueba.java.sprintboot.pruebaJava.service.InscriptionService;
-import com.prueba.java.sprintboot.pruebaJava.service.UserService;
 import org.springframework.stereotype.Component;
 
 @Component
